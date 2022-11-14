@@ -19,3 +19,11 @@ if (number > 0)
     }
 }
 else Console.WriteLine("Введено неверное число");
+
+// int count = 2;
+// while (count <= number)
+// {
+// Console.Write($"{count} ");
+// count+=2;
+// }
+
