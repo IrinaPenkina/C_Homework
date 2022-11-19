@@ -14,12 +14,19 @@ while (dayNumber <= 0 || dayNumber > 7)
     if (dayNumber <= 0 || dayNumber > 7) Console.WriteLine("Введено неверное число");
 }
 
-bool Holiday (int num)
+string Holiday (int num)
 {
-    return num == 6 | num == 7 ? true : false;
+    return num == 6 | num == 7 ? "Да" : "Нет";
 }
 
-bool result = Holiday (dayNumber);
+Console.WriteLine(Holiday (dayNumber));
 
-if (result == true) Console.WriteLine("да");
-else Console.WriteLine("нет");
+// bool Holiday (int num)
+// {
+//     return num == 6 | num == 7 ? true : false;
+// }
+
+// bool result = Holiday (dayNumber);
+
+// if (result == true) Console.WriteLine("да");
+// else Console.WriteLine("нет");
