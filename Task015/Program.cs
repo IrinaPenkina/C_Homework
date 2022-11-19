@@ -7,11 +7,11 @@
 // 1 -> нет
 
 int dayNumber = -1;
-while (dayNumber <= 0 || dayNumber > 8)
+while (dayNumber <= 0 || dayNumber > 7)
 {
     Console.WriteLine("Введите число дня недели в диапазоне от 1 до 7");
     dayNumber = Convert.ToInt32(Console.ReadLine());
-    if (dayNumber <= 0 || dayNumber > 8) Console.WriteLine("Введено неверное число");
+    if (dayNumber <= 0 || dayNumber > 7) Console.WriteLine("Введено неверное число");
 }
 
 bool Holiday (int num)
