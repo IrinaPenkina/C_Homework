@@ -3,7 +3,7 @@
 // 0, 7, 8, -2, -2 -> 2
 // -1, -7, 567, 89, 223-> 3
 
-// Решения для вввода неограниченного количества чисел:
+// Решения для ввода неограниченного количества чисел:
 
 double[] ConvertStringToDoubleArray(string[] str)
 {
@@ -26,20 +26,31 @@ void PrintArray(double[] arr, string elem1, string elem2)
     Console.WriteLine($"{elem2}");
 }
 
+int CountPositiveNumbers (double[] arr)
+{
+    int count = 0;
+    for (int i = 0; i < arr.Length; i++)
+    {
+        if (arr[i] > 0) count++;
+    }
+    return count;
+}
 
-Console.WriteLine("Введите числа через запятую с пробелом: ");
+Console.WriteLine("Введите любое количество вещественных чисел через пробел:");
 
 string[] stringArray = {"0"};
 var readLine = Console.ReadLine();
 if (readLine is not null) 
 {
-    stringArray = readLine.Split(", ");
+    stringArray = readLine.Split(" ");
 }
 
 // Если просто задать код:
 // string[] stringArray = Console.ReadLine().Split(", "))
 // то вылезает ошибка CS8602 (разыменовка возможно пустой ссылки).
-// Условие в строках 28 - 31 нужно для ее разрешения.
+// Код в строках 42 - 46 нужен для ее разрешения.
 
 double[] doubleArray = ConvertStringToDoubleArray(stringArray);
 PrintArray(doubleArray, "Массив --> [", "]");
+int countPos = CountPositiveNumbers (doubleArray);
+Console.WriteLine($"Количество положительных чисел в массиве --> {countPos}");
