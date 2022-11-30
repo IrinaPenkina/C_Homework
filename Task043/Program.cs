@@ -5,13 +5,13 @@
 
 double FindCrossX (double kOne, double bOne, double kTwo, double bTwo)
 {
-    double x = Math.Round(((bTwo - bOne) / (kOne - kTwo)), 1, MidpointRounding.ToEven);
+    double x = Math.Round(((bTwo - bOne) / (kOne - kTwo)), 1, MidpointRounding.ToZero);
     return x;
 }
 
 double FindCrossY (double x, double kOne, double bOne, double kTwo, double bTwo)
 {
-    double y = Math.Round((kOne * x + bOne), 1, MidpointRounding.ToEven);
+    double y = Math.Round((kOne * x + bOne), 1, MidpointRounding.ToZero);
     return y;
 }
 
