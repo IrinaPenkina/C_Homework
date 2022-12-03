@@ -53,4 +53,4 @@ if (readLine is not null)
 double[] doubleArray = ConvertStringToDoubleArray(stringArray);
 PrintArray(doubleArray, "Массив --> [", "]");
 int countPos = CountPositiveNumbers (doubleArray);
-Console.WriteLine($"Количество положительных чисел в массиве --> {countPos}");
+Console.WriteLine($"Количество положительных чисел --> {countPos}");

@@ -15,17 +15,6 @@ double[] ConvertStringToDoubleArray(string[] str)
     return arr;
 }
 
-void PrintArray(double[] arr, string elem1, string elem2)
-{
-    Console.Write($"{elem1}");
-    for (int i = 0; i < arr.Length; i++)
-    {
-        if (i < arr.Length - 1) Console.Write($"{arr[i]}, ");
-        else Console.Write($"{arr[i]}");
-    }
-    Console.WriteLine($"{elem2}");
-}
-
 int CountPositiveNumbers (double[] arr)
 {
     int count = 0;
@@ -39,14 +28,14 @@ int CountPositiveNumbers (double[] arr)
 Console.WriteLine("Определите количество задаваемых вещественных чисел:");
 int size = Convert.ToInt32(Console.ReadLine());
 
-Console.WriteLine("Введите числа через пробел: ");
+Console.WriteLine("Введите ряд чисел через запятую и пробел: ");
 string[] stringArray = {"0"};
 var readLine = Console.ReadLine();
 if (readLine is not null) 
 {
-    stringArray = readLine.Split(" ");
+    stringArray = readLine.Split(", ");
 }
-if (size != stringArray.Length) Console.WriteLine("Введенный ряд чисел не соответсвует заданному количеству");
+if (size != stringArray.Length) Console.WriteLine("Ряд не соответсвует заданной длине");
 
 // Если просто задать код:
 // string[] stringArray = Console.ReadLine().Split(", "))
@@ -54,7 +43,6 @@ if (size != stringArray.Length) Console.WriteLine("Введенный ряд ч�
 // Код в строках 44 - 48 нужен для ее разрешения.
 
 double[] doubleArray = ConvertStringToDoubleArray(stringArray);
-PrintArray(doubleArray, "Массив --> [", "]");
 int countPos = CountPositiveNumbers (doubleArray);
-Console.WriteLine($"Количество положительных чисел в массиве --> {countPos}");
+Console.WriteLine($"Количество положительных чисел в ряду --> {countPos}");
 
