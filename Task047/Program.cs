@@ -35,5 +35,6 @@ void PrintMatrix (double[,] matr)
 }
 
 double [,] matrix = CreateDoubleMatrix(10, 15, -3, 5);
+Console.WriteLine("Двумерный массив: ");
 PrintMatrix (matrix);
 

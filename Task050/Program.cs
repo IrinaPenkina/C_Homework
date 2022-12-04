@@ -37,12 +37,13 @@ void PrintMatrix(int[,] matrix)
     }
 }
 
-bool IsWithinMatrix (int[,] matrix, int elemRow, int elemColumn)
+bool IsWithinMatrix (int[,] matrix, int elementRow, int elementColumn)
 {
-    return elemRow < matrix.GetLength(0) && elemColumn < matrix.GetLength(1);
+    return elementRow < matrix.GetLength(0) && elementColumn < matrix.GetLength(1);
 }
 
 int[,] matrix = CreateMatrixRndInt(3, 4, 0, 5);
+Console.WriteLine("Двумерный массив:");
 PrintMatrix (matrix);
 Console.WriteLine();
 
@@ -51,11 +52,10 @@ int elemColumn = -1;
 
 while (elemRow < 0 || elemColumn < 0)
 {
-    Console.WriteLine ("Задайте номер строки и столбца элемента массива через запятую с пробелом: ");
-    string[] elem = {"0"};
+    Console.WriteLine ("Задайте номер строки и номер столбца элемента массива через запятую с пробелом:");
+    string[] elem = new string[2];
     var readLine = Console.ReadLine();
     if (readLine is not null) elem = readLine.Split(", ");
-
     elemRow = Convert.ToInt32 (elem[0]);
     elemColumn = Convert.ToInt32 (elem[1]);
     if (elemRow < 0 || elemColumn < 0) Console.WriteLine("Координаты элемента не могут быть отрицательными.");
