@@ -62,9 +62,9 @@ void PrintArray (double[] arr, string symb1, string symb2)
 }
 
 Console.WriteLine("Двумерный массив:");
-int[,] matrix = CreateMatrixRndInt(5, 10, 0, 5);
-PrintMatrix(matrix);
-double[] colAverage = ColumnsAverage(matrix);
+int[,] matr = CreateMatrixRndInt(5, 10, 0, 5);
+PrintMatrix(matr);
+double[] colAverage = ColumnsAverage(matr);
 Console.WriteLine();
 PrintArray (colAverage, "Среднее арифметическое каждого столбца: ", ".");
 

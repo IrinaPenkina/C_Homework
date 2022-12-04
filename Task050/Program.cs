@@ -11,35 +11,35 @@
 
 int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
 {
-    int[,] matrix = new int[rows, columns];
+    int[,] matr = new int[rows, columns];
     Random rnd = new Random();
 
-    for (int i = 0; i < matrix.GetLength(0); i++)
+    for (int i = 0; i < matr.GetLength(0); i++)
     {
-        for (int j = 0; j < matrix.GetLength(1); j++)
+        for (int j = 0; j < matr.GetLength(1); j++)
         {
-            matrix[i, j] = rnd.Next(min, max + 1);
+            matr[i, j] = rnd.Next(min, max + 1);
         }
     }
-    return matrix;
+    return matr;
 }
 
-void PrintMatrix(int[,] matrix)
+void PrintMatrix(int[,] matr)
 {
-    for (int i = 0; i < matrix.GetLength(0); i++)
+    for (int i = 0; i < matr.GetLength(0); i++)
     {
         Console.Write("|");
-        for (int j = 0; j < matrix.GetLength(1); j++)
+        for (int j = 0; j < matr.GetLength(1); j++)
         {
-            Console.Write($"{matrix[i, j], 4} ");
+            Console.Write($"{matr[i, j], 4} ");
         }
         Console.WriteLine(" |");
     }
 }
 
-bool IsWithinMatrix (int[,] matrix, int elementRow, int elementColumn)
+bool IsWithinMatrix (int[,] matr, int elementRow, int elementColumn)
 {
-    return elementRow < matrix.GetLength(0) && elementColumn < matrix.GetLength(1);
+    return elementRow < matr.GetLength(0) && elementColumn < matr.GetLength(1);
 }
 
 int[,] matrix = CreateMatrixRndInt(3, 4, 0, 5);
