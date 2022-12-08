@@ -48,13 +48,32 @@ void SortRowInDescendingOrder (int[,] matrix)
         {
             arrayRow[k] = matrix[i,j];
         }
-        Array.Sort(arrayRow, (x, y) => y.CompareTo(x));
+        SortInDescedningOrder(arrayRow);
         for (int j = 0, k = 0; j < matrix.GetLength(1); j++, k++)
         {
             matrix[i,j] = arrayRow[k];
         }
     }
 }
+
+
+void SortInDescedningOrder (int[] arr)
+{
+    for (int temp = arr.Length - 1; temp >=1; temp--)
+    {
+        int min = arr[temp];
+        for (int i = temp - 1; i >= 0; i--)
+        {
+            if (arr[i] < min) 
+            {
+                min = arr[i];
+                arr[i] = arr[temp];
+                arr[temp] = min;
+            }
+        }      
+    }
+}
+
 
 
 int[,] matrix = CreateMatrixRndInt(4, 4, 0, 5);
@@ -64,3 +83,23 @@ SortRowInDescendingOrder(matrix);
 PrintMatrix(matrix);
 
 
+// Метод сортировки через инкремент:
+// void SortInDescedningOrder (int[] arr)
+// {
+//     for (int temp = 0; temp < arr.Length - 1; temp++)
+//     {
+//         int max = arr[temp];
+//         for (int i = temp + 1; i < arr.Length; i++)
+//         {
+//             if (arr[i] > max) 
+//             {
+//                 max = arr[i];
+//                 arr[i] = arr[temp];
+//                 arr[temp] = max;
+//             }
+//         }      
+//     }
+// }
+
+// Встроенный метод сортировки:
+//Array.Sort(arrayRow, (x, y) => y.CompareTo(x));
