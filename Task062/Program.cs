@@ -82,3 +82,4 @@ Console.WriteLine();
 int[,] matrix = CreateSpiralMatrix(array);
 PrintMatrix(matrix, "Спирально заполненный двумерный массив: ");
 
+
